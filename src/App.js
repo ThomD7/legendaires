@@ -70,7 +70,7 @@ function App() {
             <Route path="*" element={<Error />} />
             <Route path="/" element={<Home />} />
             <Route path="/#membres" element={<Home />} />
-            <Route path="/legendaires/apropos" element={<About />} />
+            <Route path="/apropos" element={<About />} />
             <Route path="/membre/:id" element={<MembresDetails />} />
           </Routes>
           <Footer />
