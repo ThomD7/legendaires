@@ -2,7 +2,7 @@
 import axios from "axios";
 import { clanTag, token } from "../config";
 
-axios.defaults.baseURL = "https://api.clashofclans.com/v1";
+axios.defaults.baseURL = "https://cors-anywhere.herokuapp.com/https://api.clashofclans.com/v1";
 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
 export const getClan = async () => {
