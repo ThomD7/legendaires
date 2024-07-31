@@ -126,6 +126,9 @@ function NavigationBar() {
             <img src={logo} alt={lang.header.logoAlt} className="w-20 h-20" />
             <Titres texte={clanName} className="-my-2"/>
           </Link>
+          <Link to="/apropos">
+            OKAY
+          </Link>
           <div onClick={handleTest}>
             test
           </div>
