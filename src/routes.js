@@ -7,11 +7,11 @@ export const routes = [
     },
     {
         title: lang.header.members,
-        href: '/#' + normalizeURL(lang.header.members),  // Use the normalized URL
+        href: '/legendaires/#' + normalizeURL(lang.header.members),  // Use the normalized URL
     },
     {
         title: lang.header.about,
-        href: normalizeURL(lang.header.about),
+        href: '/legendaires/' + normalizeURL(lang.header.about),
     },
 ];
 
