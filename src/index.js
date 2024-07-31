@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename='https://thomd7.github.io/legendaires/'>
+    <BrowserRouter>
       <Helmet>
         <title>{clanName}</title>
         <link rel="icon" href="/favicon.ico" />
