@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/legendaires/static/css/main.9e932229.css",
-    "main.js": "/legendaires/static/js/main.0b7a939a.js",
+    "main.js": "/legendaires/static/js/main.ecb79e32.js",
     "static/media/hero.png": "/legendaires/static/media/hero.55375bf269e4466722c7.png",
     "index.html": "/legendaires/index.html",
     "main.9e932229.css.map": "/legendaires/static/css/main.9e932229.css.map",
-    "main.0b7a939a.js.map": "/legendaires/static/js/main.0b7a939a.js.map"
+    "main.ecb79e32.js.map": "/legendaires/static/js/main.ecb79e32.js.map"
   },
   "entrypoints": [
     "static/css/main.9e932229.css",
-    "static/js/main.0b7a939a.js"
+    "static/js/main.ecb79e32.js"
   ]
 }
