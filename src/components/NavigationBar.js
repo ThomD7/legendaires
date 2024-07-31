@@ -123,6 +123,9 @@ function NavigationBar() {
             <img src={logo} alt={lang.header.logoAlt} className="w-20 h-20" />
             <Titres texte={clanName} className="-my-2"/>
           </Link>
+          <a onClick={navigate(routes[2].href)}>
+            test
+          </a>
         </div>
         <div className="flex gap-10 pe-10">
           {routes.map((route) => (
