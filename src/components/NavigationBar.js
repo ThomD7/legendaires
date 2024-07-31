@@ -66,6 +66,9 @@ function NavigationBar() {
     setOpen(false);
   };
 
+  const handleTest = () => {
+    navigate(routes[2].href)
+  }
   return (
     <div>
       <div className="lg:hidden">
@@ -123,9 +126,9 @@ function NavigationBar() {
             <img src={logo} alt={lang.header.logoAlt} className="w-20 h-20" />
             <Titres texte={clanName} className="-my-2"/>
           </Link>
-          <a onClick={navigate(routes[2].href)}>
+          <div onClick={handleTest}>
             test
-          </a>
+          </div>
         </div>
         <div className="flex gap-10 pe-10">
           {routes.map((route) => (
