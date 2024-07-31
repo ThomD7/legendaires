@@ -1,3 +1,4 @@
+// src/services/clanService.js
 import axios from "axios";
 import { clanTag, token } from "../config";
 
@@ -21,3 +22,12 @@ export const getClanMembers = async (playerTag) => {
         console.error("Error fetching player data:", error);
     }
 }
+
+export const fetchFaviconUrl = async () => {
+    try {
+        const response = await axios.get(`/clans/${encodeURIComponent(clanTag)}`);
+        return response.data.badgeUrls.small;
+    } catch (error) {
+        console.error("Error fetching favicon URL:", error);
+    }
+};

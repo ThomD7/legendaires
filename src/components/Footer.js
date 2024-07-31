@@ -3,6 +3,7 @@ import { routes } from '../routes.js';
 import { clanName } from "../config.js";
 import { getClan } from "../services/clanService.js";
 import { Link } from "react-router-dom";
+import lang from '../lang.json';
 
 function Footer() {
     const [membres, setMembres] = useState();
@@ -25,7 +26,7 @@ function Footer() {
                 </div>
                 <div className="flex flex-col items-start">
                     <div className="border-b mb-2">
-                        Top 5
+                        {lang.footer.top5}
                     </div>
                     <ul className="w-50 m-auto justify-items-start w-max space-y-2">
                         {membres && membres.map((membre) => {

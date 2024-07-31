@@ -1,0 +1,38 @@
+{
+    "header":{
+        "clan":"Clan",
+        "members":"Membres",
+        "about":"À propos",
+        "member":"Membre",
+        "logoAlt":"Logo du clan",
+        "crossLabel":"Fermer le menu"
+    },
+    "footer":{
+        "top5":"Top 5"
+    },
+    "index":{
+        "title":"Clan",
+        "heroText":"Rejoignez nous:",
+        "heroAlt":"Image d'un dragon électrique de Clash of Clans",
+        "membersList":"Membres",
+        "ligueAlt":"Logo de la ligue "
+    },
+    "member":{
+        "loading":"Chargement",
+        "backButton":"Retour",
+        "member": "Membre",
+        "admin": "Ainé",
+        "coLeader": "Chef Adjoint",
+        "leader": "Chef",
+        "ligueAlt":"Logo de la ligue "
+    },
+    "about":{
+        "title":"À propos",
+        "content":"Ce site a été créé pour afficher les membres du clan et les informations les concernant. Il est possible de voir les informations de chaque membre en cliquant sur leur nom. Les informations sont récupérées via l'API de Supercell. Le site est en cours de développement et de nouvelles fonctionnalités seront ajoutées au fur et à mesure."
+    },
+    "error":{
+        "title":"Erreur",
+        "notFound":"Page non trouvée",
+        "noLoading":"Une erreur est survenue lors de la récupération des données. Veuillez réessayer plus tard."
+    }
+}

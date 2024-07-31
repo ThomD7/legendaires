@@ -3,6 +3,8 @@ import { getClan } from "../services/clanService";
 import Titres from "./Titres";
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom";
+import lang from '../lang.json';
+import { routes, routesParams } from "../routes";
 
 function Membres() {
     const [membres , setMembres] = useState();
@@ -15,7 +17,9 @@ function Membres() {
     }, []);
     return (
         <div>
-            <Titres texte="Membres"/>
+            <div id={routes[1].href.substring(2)}>
+                <Titres texte={lang.index.membersList}/>
+            </div>
             <ul className="w-50 m-auto justify-items-start w-max space-y-2">
                 {membres && membres.map((membre) => {
                     return (
@@ -26,10 +30,10 @@ function Membres() {
                                 scale: 1.1
                             }}
                         >
-                            <Link to={'membre/' + membre.tag.slice(1)}  className="flex items-center gap-x-6 rounded-lg px-20 py-5 bg-gray-100">
+                            <Link to={routesParams[0].href + membre.tag.slice(1)}  className="flex items-center gap-x-6 rounded-lg px-20 py-5 bg-gray-100">
                                 {membre.league && (
                                     <div>
-                                        <img src={membre.league.iconUrls.tiny} alt="Ligue" />
+                                        <img src={membre.league.iconUrls.tiny} alt={lang.index.ligueAlt + membre.league.name} />
                                     </div>
                                 )}
                                 <div>

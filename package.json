@@ -2,7 +2,6 @@
   "name": "legendaires",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8080",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -12,10 +11,14 @@
     "framer-motion": "^11.3.6",
     "hamburger-react": "^2.5.1",
     "http-proxy-middleware": "^3.0.0",
+    "i18next": "^23.12.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
+    "react-multi-lang": "^2.2.0",
     "react-router-dom": "^6.25.1",
     "react-scripts": "5.0.1",
+    "react-tooltip": "^5.27.1",
     "react-use": "^17.5.0",
     "web-vitals": "^2.1.4"
   },
