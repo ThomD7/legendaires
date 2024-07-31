@@ -2,7 +2,7 @@
   "homepage": "legendaires/",
   "name": "legendaires",
   "version": "0.1.0",
-  "proxy": "https://api.clashofclans.com/v1"
+  "proxy": "https://api.clashofclans.com/v1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
