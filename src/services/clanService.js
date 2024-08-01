@@ -1,72 +1,62 @@
 // src/services/clanService.js
-import axios from "axios";
 import { clanTag, token } from "../config";
 
 const baseUrl = 'https://api.clashofclans.com/v1';
-axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-axios.defaults.withCredentials = false;
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-
-// Function to test API accessibility
-const testApiAccess = async (url) => {
-    const testURL = url;
-    const myInit = {
-        method: 'HEAD',
-        mode: 'no-cors',
-    };
-
-    const myRequest = new Request(testURL, myInit);
-
-    try {
-        const response = await fetch(myRequest);
-        console.log(response);
-        return true;  // API is accessible
-    } catch (error) {
-        console.error('Error testing API access:', error);
-        return false;  // API is not accessible
-    }
+const headers = {
+    'Authorization': `Bearer ${token}`,
+    'Content-Type': 'application/json'
 };
 
 export const getClan = async () => {
-    const isAccessible = await testApiAccess(`${baseUrl}/clans/${encodeURIComponent(clanTag)}`);
-    if (!isAccessible) {
-        console.error('API is not accessible');
-        return;
-    }
-
     try {
-        const response = await axios.get(`${baseUrl}/clans/${encodeURIComponent(clanTag)}`);
-        return response.data;
+        const response = await fetch(`${baseUrl}/clans/${encodeURIComponent(clanTag)}`, {
+            method: 'GET',
+            headers: headers,
+            credentials: false,
+        });
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        
+        const data = await response.json();
+        return data;
     } catch (error) {
         console.error("Error fetching clan data:", error);
     }
 };
 
 export const getClanMembers = async (playerTag) => {
-    const isAccessible = await testApiAccess(`${baseUrl}/players/${encodeURIComponent('#' + playerTag)}`);
-    if (!isAccessible) {
-        console.error('API is not accessible');
-        return;
-    }
-
     try {
-        const response = await axios.get(`${baseUrl}/players/${encodeURIComponent('#' + playerTag)}`);
-        return response.data;
+        const response = await fetch(`${baseUrl}/players/${encodeURIComponent('#' + playerTag)}`, {
+            method: 'GET',
+            headers: headers,
+        });
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        
+        const data = await response.json();
+        return data;
     } catch (error) {
         console.error("Error fetching player data:", error);
     }
-}
+};
 
 export const fetchFaviconUrl = async () => {
-    const isAccessible = await testApiAccess(`${baseUrl}/clans/${encodeURIComponent(clanTag)}`);
-    if (!isAccessible) {
-        console.error('API is not accessible');
-        return;
-    }
-
     try {
-        const response = await axios.get(`${baseUrl}/clans/${encodeURIComponent(clanTag)}`);
-        return response.data.badgeUrls.small;
+        const response = await fetch(`${baseUrl}/clans/${encodeURIComponent(clanTag)}`, {
+            method: 'GET',
+            headers: headers,
+        });
+        
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        
+        const data = await response.json();
+        return data.badgeUrls.small;
     } catch (error) {
         console.error("Error fetching favicon URL:", error);
     }
