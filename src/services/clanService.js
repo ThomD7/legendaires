@@ -3,6 +3,7 @@ import axios from "axios";
 import { clanTag, token } from "../config";
 
 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 export const getClan = async () => {
     try {
