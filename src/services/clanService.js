@@ -3,7 +3,7 @@ import axios from "axios";
 import { clanTag, token } from "../config";
 
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-const baseUrl = 'https://api.exemple.com';  // Remplacez par l'URL de base de votre API
+const baseUrl = 'https://api.clashofclans.com/v1';  // Remplacez par l'URL de base de votre API
 
 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
