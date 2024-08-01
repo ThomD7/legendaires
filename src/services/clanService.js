@@ -2,12 +2,14 @@
 import axios from "axios";
 import { clanTag, token } from "../config";
 
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+const baseUrl = 'https://api.exemple.com';  // Remplacez par l'URL de base de votre API
+
 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
 export const getClan = async () => {
     try {
-        const response = await axios.get(`/clans/${encodeURIComponent(clanTag)}`);
+        const response = await axios.get(`${proxyUrl}${baseUrl}/clans/${encodeURIComponent(clanTag)}`);
         return response.data;
     } catch (error) {
         console.error("Error fetching clan data:", error);
@@ -16,7 +18,7 @@ export const getClan = async () => {
 
 export const getClanMembers = async (playerTag) => {
     try {
-        const response = await axios.get(`/players/${encodeURIComponent('#' + playerTag)}`);
+        const response = await axios.get(`${proxyUrl}${baseUrl}/players/${encodeURIComponent('#' + playerTag)}`);
         return response.data;
     } catch (error) {
         console.error("Error fetching player data:", error);
@@ -25,7 +27,7 @@ export const getClanMembers = async (playerTag) => {
 
 export const fetchFaviconUrl = async () => {
     try {
-        const response = await axios.get(`/clans/${encodeURIComponent(clanTag)}`);
+        const response = await axios.get(`${proxyUrl}${baseUrl}/clans/${encodeURIComponent(clanTag)}`);
         return response.data.badgeUrls.small;
     } catch (error) {
         console.error("Error fetching favicon URL:", error);
