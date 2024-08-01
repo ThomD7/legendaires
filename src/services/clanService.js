@@ -2,7 +2,7 @@
 import axios from "axios";
 import { clanTag, token } from "../config";
 
-axios.defaults.baseURL = 'https://corsclash-52bbd50abeb0.herokuapp.com/https://api.clashroyale.com/v1';
+axios.defaults.baseURL = 'cors-anywhere-production-fed9.up.railway.app/https://api.clashroyale.com/v1';
 axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
